@@ -1,0 +1,41 @@
+ $green-primary:#059033;  
+	.menu-open .content-wrapper, .menu-open .top-header {
+      width: 100%;
+    }
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+      width: 80%;
+      position: fixed;
+      background: #fff;
+      top: 0;
+      right: 0;
+      padding: 0 2rem;
+      z-index: 99;
+    }
+      .top-header .menu-btn, .top-header .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+        padding: 12px;
+        transition: background 0.3s ease-in-out;
+      }
+        .top-header .menu-btn:hover {
+          background: #edf2f7;
+        }
+
+          .navbar-top li {
+            display: inline-block;
+            margin-left: 20px;
+          }
+            .sp-btn {
+              color: #fff;
+              padding: 10px 40px;
+              background: $green-primary;
+              border-radius: 3px;
+            }
+			
+     

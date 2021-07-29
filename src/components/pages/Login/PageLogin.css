@@ -1,0 +1,108 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  
+}
+.container__information{
+  background-color:#047442;
+  color:#fff;
+  display: flex;
+  flex-direction:column;
+  padding:0 5em 5em 5em;
+  padding-top: 2em;
+  flex:50%;
+}
+
+
+.container__info-title{
+  font-weight: bold;
+  font-size: 20px;
+}
+.container__info-punto{
+  display: flex;
+  margin-top: 1.8em;
+}
+.container_info-punto-d{
+  display: flex;
+  flex-direction:column;
+}
+.container__info-punto img{
+  width:30px;
+  height:30px;
+  margin-right: 1em;
+}
+
+.container__info-punto span{
+  font-weight:bold;
+}
+
+
+.container__info-punto p{
+  font-size: 14px;
+  margin-top: 0.3em;
+}
+.container__info-button-plus{
+  display: flex;
+  padding-left: 3em;
+}
+.container__info-button-plus button{
+  border-radius:35px;
+  border:1px solid #fff;
+  padding: 1.3em 3em 1.3em 3em;
+  color: #fff;
+  outline:none;
+  background:transparent;
+  transition: 0.3s all;
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  cursor:pointer;
+  margin-top: 2.3em;
+  margin-bottom: 2.3em;
+}
+
+.container__info-button-plus button:hover{
+  background-color:#fff;
+  color:#047442;
+  transition: 0.3s all;
+}
+
+.container__formulario{
+  flex:50%;
+  display:flex; 
+  justify-content: center;
+
+}
+
+.container__info-aviso-content{
+  display: flex;
+  border-radius: 10px;
+  border: 1px dashed #fff;
+
+  padding:1em
+}
+
+.container__info-aviso-content p{
+  font-size: 11px;
+  
+}
+
+.container__info-aviso-content img{
+  margin-right:1em;
+}
+
+@media (max-width:900px){
+  .container{
+    flex-direction: column;
+  }
+ .container__information{
+    padding: 4em;
+  }
+ 
+}
+
+@media (max-width:768px){
+ .container__information{
+    padding: 2em;
+  }
+}

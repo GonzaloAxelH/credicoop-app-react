@@ -1,0 +1,131 @@
+
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+}
+
+  .body-wrapper {
+    width: 100%;
+    position: absolute;
+  }
+
+    /* Flex area */
+
+    .row {
+      display:-ms-flexbox;
+      display:flex;
+    }
+
+    /* Flex end */
+
+    .side-header {
+      position: fixed;
+      width: 20%;
+      height: 100vh;
+      padding: 1rem 2em;
+      overflow: hidden;
+      background: #edf2f7;
+      z-index: 2;
+    }
+    .menu-open .side-header {
+            z-index: 0;
+            width: 0%;
+            visibility: hidden;
+            opacity: 0;
+    }
+      .navbar-side {
+        margin-top: 2rem;
+        height: 450px;
+        position: relative;
+        width: 100%;
+      }
+        .logo {
+          font-size: 35px;
+          font-weight: bolder;
+        }
+        .navbar-side ul li {
+          width: 100%;
+          padding: 4px 1em;
+          margin-bottom: 3px;
+          display: block;
+          border-radius: 3px;
+          transition: background 0.3s ease-in-out;
+        }
+          .navbar-side ul li:target, .navbar-side ul li.active {
+            background: rgb(255,255,255,0.7);
+          }
+        .bottom {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+          .navbar-side a {
+            font-weight: bold;
+            font-size: 14px;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+            .navbar-side ul li a .svg-space {
+              width: 60px;
+            }
+              .navbar-side ul li a .svg-space svg {
+                width: 40px;
+                height: 40px;
+                margin-bottom: -12px;
+              }
+        .footer {
+          position: absolute;
+          border: 0;
+          left: 0;
+          padding: 0 2rem;
+          margin: 2rem 0;
+        }
+
+    input {
+            padding: 9px 10px;
+            border: 1px solid #4a5568;
+            width: 400px;
+          }
+    .hero-slider {
+      margin-top: 80px;
+      width: 100%;
+      height: 400px;
+      background: #edf2f7;
+      background-image: url('https://i.redd.it/p7droq2aitm21.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    main{
+      width: 100%;
+      margin: 2rem 0;
+    }
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .game-list {
+        -webkit-column-count­: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+        -webkit-column-gap: 10px;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        -webkit-column-width­: 20%;
+        -moz-column-width: 20%;
+        column-width: 20%;
+        position: relative;
+        margin-top: 2em;
+      }
+        .game {
+          height: auto;
+          overflow: hidden;
+        }
+

@@ -1,76 +1,76 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Pig from './pig.svg'
-import Form from './Form.js'
-import Icon from './icon.svg'
+import {BrowserRouter as Router,Link, Switch,Route, Redirect }  from  'react-router-dom'
+
+import "./App.css"
+import PageLogin from './components/pages/Login/PageLogin'
+import PageHome from './components/pages/PagesCliente/PageHome'
+import PageCuenta from './components/pages/PagesCliente/PageCuenta'
+import PageReportes from './components/pages/PagesCliente/PageReportes'
+import PagesTransacciones from './components/pages/PagesCliente/PageTransaccions'
+import { Logout ,LogoutAdmin}from './utils/JWTAuth'
+import Checkout from './components/pages/Checkout/Checkout'
+
+import PageAdminHome from './components/pages/PagesAdmin/PageHome'
+import PageAdminCuenta from './components/pages/PagesAdmin/PageCuenta'
+import PageAdminReportes from './components/pages/PagesAdmin/PageReportes'
+import PageAdminEmpleados from './components/pages/PagesAdmin/PageEmpleados'
+import PageAdminAsociados from './components/pages/PagesAdmin/PageAsociados'
+
+
+const Index  = () => {
+  return(
+    <>
+    <h1>Pagina incio</h1>
+    <Link to="/login">Entrar al sistema</Link>
+    </>
+  )
+}
+
+const auth=localStorage.getItem('access_auth');
+const auth_admin = localStorage.getItem('access_auth_admin');
+
+const PrivateRoute = ({component:Component,...rest})=>{
+  return(
+    <Route {...rest}>
+      {auth ? <Component /> : <Redirect to="/login" />}
+    </Route>
+  )
+}
+
+const PrivateRouteAdmin = ({component:Component,...rest})=>{
+  return(
+    <Route {...rest}>
+      {auth_admin ? <Component /> : <Redirect to="/login" />}
+    </Route>
+  )
+}
+
+
 function App() {
   return (
-      <div className="container">
-            <div className="container__information">
-              <div className="container__info-image">
-                <img src={Pig} alt=""/>
-              </div>
-              <div className="container__info-title">
-                <h3> Abre tu cuenta FREE hoy </h3>
-              </div>
-              <div className="container__info-punto">
-                <img src={Icon}/>
-
-                <div className="container_info-punto-d">
-                  <span>Sin pago de mantenimiento ni comisiones</span>
-                  <p>En la red de 950 cajeros y 13,100 agentes Scotiabank.</p>
-                </div>
-              </div>
-
-              <div className="container__info-punto">
-                <img src={Icon}/>
-
-                <div className="container_info-punto-d">
-                  <span>Sin costo por operaciones en todo el Perú</span>
-                  <p>En nuestra red a nivel nacional.</p>
-                </div>
-              </div>
-
-               <div className="container__info-punto">
-                <img src={Icon}/>
-
-                <div className="container_info-punto-d">
-                  <span>Sin costo por retiros en todo el Perú</span>
-                  <p>Desde nuestra app, web, cajeros o ventanillas.</p>
-                </div>
-              </div>
-
-             <div className="container__info-punto">
-                <img src={Icon}/>
-
-                <div className="container_info-punto-d">
-                  <span>La única cuenta en el Perú que #NoCobraNada</span>
-                  <p>En nuestra red a nivel nacional.</p>
-                </div>
-              </div>
-                   
-            
-          
-              <div className="container__info-button-plus">
-                <a href="http://credicooparequipa.pe/#/"><button>Mas Informacion</button></a>
-              </div>
+    <Router>
+        <Switch>
+          <Route exact path='/' component={Index}/>
+          <Route path='/login' component={PageLogin}/>
+         
+          <PrivateRoute path='/app/cuenta' component={PageCuenta}/>
+          <PrivateRoute path='/app/pagos' component={PagesTransacciones}/>
+          <PrivateRoute path='/app/reportes' component={PageReportes}/>
+          <PrivateRoute exact  path='/app/home' component={PageHome}/>          
+          <PrivateRoute path='/app/logout' component={Logout}/>
+          <PrivateRoute exact  path='/app/checkout' component={Checkout}/>          
 
 
-     <div className="container__info-aviso-content">
-            <img  src={Icon}/>
-            <p>El beneficio de #NoCobraNada corresponde solo a las operaciones realizadas con Cuenta Free en los canales Scotiabank a nivel nacional.</p>
-          </div>
 
+          <PrivateRouteAdmin exact  path='/admin/home' component={PageAdminHome}/>          
+          <PrivateRouteAdmin exact  path='/admin/cuenta' component={PageAdminCuenta}/>          
+          <PrivateRouteAdmin exact  path='/admin/asociados' component={PageAdminAsociados}/>          
+          <PrivateRouteAdmin exact  path='/admin/empleados' component={PageAdminEmpleados}/>          
+          <PrivateRouteAdmin exact  path='/admin/reportes' component={PageAdminReportes}/>          
+          <PrivateRouteAdmin exact  path='/admin/logout' component={LogoutAdmin}/>          
+          <PrivateRouteAdmin exact  path='/admin/logout' component={LogoutAdmin}/>          
 
-            </div>
-            <div className="container__formulario">
-                <Form />
-                <div className="container__form-options">
-
-                </div>
-					
-             </div>
-      </div>
+        </Switch>
+    </Router>
     );
 }
 export default App;

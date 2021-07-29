@@ -1,0 +1,39 @@
+.pagehome__container h1 {
+  padding: 1em 0 1em 0;
+
+}
+
+
+.pagehome__container img{
+  border-radius:8px;
+  
+  object-fit:contain;
+}
+
+
+.pagehome__container span{
+  color:green;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.pagehome__valores{
+  display: flex;
+}
+
+
+.pagehome__valores img{
+  padding-left:5em;
+}
+.pagehome__valores li{
+  padding-left: 1em;  
+  font-weight: bold;
+  font-style: italic;
+}
+
+.pagehome__valores p{
+  padding:0.5em 0 0.5em 0;
+  padding-left: 3em;  
+  width: 400px;
+}

@@ -1,0 +1,37 @@
+.stripe label{
+	color:#4a5568;
+	font-weight:bold;
+}
+
+.stripe input{
+	border:none;
+	outline:none;
+	color:#4a5568;
+}
+.stripe fieldset{
+	border-radius:10px;
+	margin-bottom: 1em;
+}
+.stripe .FormRow{
+	border:none;
+}
+.stripe .SubmitButton{
+	background:#4a5568;
+	border:none;
+}
+.stripe .StripeElement{
+	
+	padding: 1em 4.5em 1em 4.5em;
+	background:#4a5568;
+}
+.stripe .CardField{
+	padding: 0em 1em 0em 1em;
+}
+.stripe .InputElement{
+
+
+}
+.stripe .InputContainer{
+
+
+}

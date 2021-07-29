@@ -1,0 +1,13 @@
+$sidebar: 300px;
+$color-dark: #1B2327;
+$color-dark-blue: #1C2E36;
+$color-light: #e7e7e7;
+$color-black: #242424;
+$color-green:#22C064;
+$gutter: 30px;
+$block-unit: 100px;
+
+.page {
+  margin-left:$sidebar;
+  background-color:red;
+}

@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+$clr-light: #ffffff;
+$clr-dark: #0f0f0f;
+$clr-grey: #fdfdfd;
+$clr-yellow: #fff691;
+$clr-green: #6dea9e;
+$clr-blue: #aff5f7;
+$body-bg-color: #f7f7f7;
+$clr-txt-grey: rgb(138, 138, 138);
+$clr-txt-black: #2e2e2e;
+$header-height: 95px;
+$font-family: "Poppins", sans-serif;
+$common-border: 1px solid rgba(0, 0, 0, 0.1);
+$fs-1: 1.802rem;
+$fs-2: 1.602rem;
+$fs-3: 1.424rem;
+$fs-4: 1.266rem;
+$fs-5: 1.125rem;
+$fs-6: 1rem;
+$fs-7: 0.85rem;
+$fs-8: 0.67rem;
+
+
+
+th {
+  text-align: left;
+  font-weight: 500;
+  border: none;
+}
+
+th span,
+td span {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+.bg-green {
+  background-color: $clr-green;
+}
+
+.bg-blue {
+  background-color: $clr-blue;
+}
+
+.bg-yellow {
+  background-color: $clr-yellow;
+}
+
+.text-lg {
+  font-size: $fs-1;
+  @media screen and (max-width: 860px) {
+    font-size: $fs-2;
+  }
+}
+
+.btn {
+border:none;
+  @media screen and (max-width: 860px) {
+    font-size: $fs-7;
+  }
+  font-weight: 700;
+  font-size: $fs-6;
+  text-transform: capitalize;
+  transition: 0.5ms ease;
+}
+
+.btn-primary {
+  color: $clr-dark;
+  @extend .bg-green;
+  &:hover,
+  &:active {
+    background-color: #6dea9fda;
+  }
+}
+
+.page__transaccions{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr minmax(150px, 25%);
+  grid-template-rows: $header-height auto;
+  border-block-start: 7px solid $clr-dark;
+  @media screen and (max-width: 860px) {
+    grid-template-columns: 100%;
+  }
+}
+
+
+.menu {
+  border-right: $common-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    width: 32px;
+    height: 32px;
+    @media screen and (max-width: 860px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+.nav {
+  line-height: $header-height;
+  .page-title {
+    padding-left: 2.6rem;
+    @media screen and (max-width: 860px) {
+      padding-left: 1.8rem;
+    }
+  }
+}
+
+.data-summary {
+  display: grid;
+  height: 100vh;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-rows: repeat(2, $header-height) repeat(2, 1fr) 60px;
+  grid-template-columns: 100%;
+  border-left: 0.86px solid rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 860px) {
+    height: auto;
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-rows: repeat(2, calc($header-height + 10vh)) repeat(2, 1fr) 70px;
+  }
+}
+
+.data-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__heading {
+    font-size: $fs-8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  &__content {
+    font-weight: 400;
+    .sup {
+      font-weight: 500;
+      font-size: $fs-5;
+      margin-inline-end: 0.29rem;
+    }
+  }
+  &__amount {
+    letter-spacing: 2px;
+  }
+  &__tag {
+    min-width: 120px;
+    min-height: 25px;
+    line-height: 25px;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 300;
+    font-size: $fs-8;
+    background-color: $clr-grey;
+  }
+}
+
+.data-info:nth-child(4) {
+  border-bottom: none;
+}
+
+.data-info--light {
+  background-color: $clr-light;
+  border-bottom: $common-border;
+  min-height: 200px;
+  .data-info__content {
+    margin: 1rem 0;
+  }
+}
+
+.data-body {
+  width: 100%;
+}
+
+.scroll-check {
+  width: 100%;
+  height: 500px;
+  @media screen and (max-width: 700px) {
+
+  }
+}
+
+#data-table {
+  width: 100%;
+  min-width: 600px;
+  .table__row--header {
+    background-color: $clr-dark;
+    color: $clr-light;
+    th:first-child {
+      text-align: center;
+    }
+    .header__title {
+      display: block;
+      padding: 1rem 0;
+      text-transform: capitalize;
+      font-weight: 400;
+    }
+  }
+
+  .table__row {
+    height: 4rem;
+    &:nth-child(odd) {
+      background-color: $clr-grey;
+    }
+    .id {
+      text-align: center;
+    }
+    .price,
+    .merchant {
+      font-weight: 400;
+      font-size: $fs-6;
+    }
+    .date,
+    .charge {
+      text-transform: capitalize;
+      font-size: $fs-7;
+      color: $clr-txt-grey;
+    }
+  }
+  @media screen and (max-width: 860px) {
+    col:nth-child(1) {
+      display: none;
+    }
+  }
+}

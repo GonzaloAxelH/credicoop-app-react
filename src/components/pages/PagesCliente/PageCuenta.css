@@ -1,0 +1,20 @@
+.pagecuenta__container{
+	display: flex;
+	width:100%;
+	justify-content: center;
+}
+
+
+.pagecuenta__info-cuenta h1{
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+}
+
+.pagecuenta__info-cuenta span{
+	color: green;
+}
+
+.pagecuenta__userimg{
+	margin-left: 43%;
+}
